@@ -17,6 +17,10 @@ class Trainer(ABC):
     def __init__(self):
         self.device = Config().device()
         self.client_id = 0
+        
+        self.history_importance = 1
+        if hasattr(Config().trainer, 'history'):
+            self.history_importance = Config().server.history
 
     @staticmethod
     def run_sql_statement(statement: str, params: tuple = None):

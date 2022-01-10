@@ -67,7 +67,8 @@ class Estimator:
             # The machine learning model
             "model_name": "sdd_model",
             "momentum": 0.9,
-            "weight_decay": 0.0
+            "weight_decay": 0.0,
+            "history": 0.1
         }
 
     @staticmethod

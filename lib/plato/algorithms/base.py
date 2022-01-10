@@ -51,7 +51,7 @@ class Algorithm(ABC):
 
         updated_weights = OrderedDict()
         for name, weight in baseline_weights.items():
-            updated_weights[name] = weight + update[name]
+            updated_weights[name] = weight + self.trainer.history_importance * update[name]
 
         return updated_weights
 

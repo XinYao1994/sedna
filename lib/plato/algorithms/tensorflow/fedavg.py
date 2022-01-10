@@ -54,7 +54,7 @@ class Algorithm(base.Algorithm):
 
         updated_weights = OrderedDict()
         for index, weight in enumerate(baseline_weights):
-            updated_weights[index] = weight + update[index]
+            updated_weights[index] = weight + self.trainer.history_importance * update[index]
 
         return updated_weights
 
